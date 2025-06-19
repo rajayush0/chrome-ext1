@@ -47,7 +47,7 @@ inputBtn.addEventListener("click", function() {
 })
 
 document.addEventListener('keydown', function(event) {
-    // Check for Ctrl + S (or Cmd + S on Mac)
+    
     if ((event.ctrlKey || event.metaKey) && event.key === 's') {
         event.preventDefault(); // Prevent default browser save action
         chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
@@ -55,6 +55,6 @@ document.addEventListener('keydown', function(event) {
             localStorage.setItem("myLeads", JSON.stringify(myLeads) )
             render(myLeads)
         })
-        // Call your save function here
+        
     }
 });
